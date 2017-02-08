@@ -7,7 +7,8 @@ class MessageDatatable < AjaxDatatablesRails::Base
     @sortable_columns ||= [
       'Message.id',
       'Message.name',
-      'Message.subject'
+      'Message.subject',
+      'Message.send_when_accepted'
     ]
   end
 
@@ -29,6 +30,7 @@ class MessageDatatable < AjaxDatatablesRails::Base
         record.id,
         record.name,
         record.subject,
+        record.send_when_accepted ? '<span style="color: red;">Yes</span>' : '-',
         record.status.titleize
       ]
     end

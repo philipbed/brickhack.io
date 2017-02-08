@@ -71,7 +71,7 @@ class Manage::MessagesController < Manage::ApplicationController
 
   def message_params
     params.require(:message).permit(
-      :name, :subject, :template, :body, recipients: []
+      :name, :subject, :send_when_accepted, :template, :body, recipients: []
     )
   end
 
